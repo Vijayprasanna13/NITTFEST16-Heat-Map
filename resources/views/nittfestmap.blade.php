@@ -30,7 +30,7 @@
         {
           context.drawImage(map, 0, 0);
         };
-        map.src = '{{asset("css/nittfestmap1.jpg")}}';
+        map.src = "{{env('SERVER_ROOT', 'http://localhost:8000').'/css/nittfestmap1.jpg'}}";
       }
       drawMap();
 
