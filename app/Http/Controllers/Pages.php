@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 
 class Pages extends Controller
 {
-    public function form(){
-    	return view('form');
+    public function map(){
+    	return view('nittfestmap');
     }
 }

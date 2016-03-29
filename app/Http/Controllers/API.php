@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Location;
@@ -23,20 +22,50 @@ class API extends Controller
     		return "iotlab";
     	else 
     		return "nowhere";
+    }
 
+    public function get_dept($rollno){
+        $roll = strrev(strrev($rollno)%1000);
+        //return $roll;
+        switch ($roll) {
+          case '101':
+            return "arch";
+          case '102':
+            return "chem";
+          case '103':
+            return "civ";
+          case '106':
+            return "cse";
+          case '108':
+            return "ece";
+          case '107':
+            return "eee";
+          case '110':
+            return "ice";
+          case '111':
+            return "mech";
+          case '112':
+            return "meta";
+          case '114':
+            return "prod";
+    default:
+        return "doms";
+}
     }
 
     public function add(Request $request){
     	$student = Student::where('rollno',$request->rollno)->get();
-    	//return $student;
-    	if(!$student->isEmpty()){
-    		
+    	if( !($student->isEmpty()) ){	
     	$location = $this->get_location($request->lat,$request->long);
+        $dept = $this->get_dept($request->rollno);
     	$update = Student::where('rollno',$request->rollno)
     					  ->update([
     					  	'lat' => $request->lat,
     					  	'long' => $request->long,
-    					  	'location' => $location]);	
+                            'dept' => $dept,
+    					  	'location' => $location,
+                            'updated' => time()
+                            ]);	
     	
     	return 1;
     	}
@@ -46,14 +75,34 @@ class API extends Controller
     		$student->lat = $request->lat;
     		$student->long = $request->long;
     		$student->location = $this->get_location($request->lat,$request->long);
-    		$student->save();
-    		return 2;
+    		$student->dept = $this->get_dept($request->rollno);
+            $student->updated = time();
+            $student->save();
+    	return 2;
     	}
     	return 0;
     } 
 
-    public function map(Request $request){
-    	$current_time = date('Y-m-d H:i:s');
-    	$students = Student::where
+    public function map(){
+        $data = [];
+        $students = Student::all();
+        $locations = ['lhc','a2','a13','barn','eeeaudi'];
+        $departments = ['archi','cse','ece','mech','eee','ice','chem','civil','prod','meta'];
+        //return $locations;
+        foreach ($departments as $department) {
+            foreach ($locations as $location) {
+                $count = 0;
+                foreach ($students as $student) {
+                        if(time()-$student->updated <= 600
+                            && $student->location == $location 
+                            && $student->dept== $department)
+                            $count++;
+                            //print 
+                            //print time()-$student->updated.'<br/>';
+                    }    
+                    $data[$department][$location] = $count;
+            }
+        }
+       return json_encode($data);
     }
 }

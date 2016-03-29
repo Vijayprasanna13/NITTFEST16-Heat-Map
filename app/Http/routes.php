@@ -17,4 +17,5 @@ Route::get('/', function () {
 
 Route::post('/add','API@add');
 Route::get('/form','Pages@form');
-Route::get('/map','API@map');
+Route::post('/map','API@map');
+Route::get('/map','Pages@map');

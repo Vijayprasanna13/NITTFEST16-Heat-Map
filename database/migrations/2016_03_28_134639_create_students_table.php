@@ -17,7 +17,9 @@ class CreateStudentsTable extends Migration
             $table->string('rollno');
             $table->string('lat');
             $table->string('long');
+            $table->string('dept');
             $table->string('location');
+            $table->string('updated');
             $table->timestamps();
         });
     }
