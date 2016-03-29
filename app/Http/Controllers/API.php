@@ -14,10 +14,12 @@ class API extends Controller
     		return "eee_audi";
     	elseif(pow($a-10.761028,2)+pow($b-78.813878,2)-pow(0.0005,2) < 0)
     		return "lhc";
-		elseif(pow($a-10.759340,2)+pow($b-78.813216,2)-pow(0.00024,2) < 0)
+		elseif(pow($a-10.759464,2)+pow($b-78.813741,2)-pow(0.000429963,2) < 0)
     		return "barn";
     	elseif(pow($a-10.758977,2)+pow($b-78.813602,2)-pow(0.00008,2) < 0)
     		return "a13";
+        elseif(pow($a-10.758965,2)+pow($b-78.812896,2)-pow(0.00011,2) < 0)
+            return "a2";
     	elseif(pow($a-10.759006,2)+pow($b-78.813237,2)-pow(0.000457010,2) < 0)
     		return "barn";
     	else 
