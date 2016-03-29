@@ -451,7 +451,7 @@
                 //drawMap();
                 $.each(departments,function(index1,department){
                   $.each(locations,function(index2,location){
-                    console.log(department+' '+location+' '+data[department][location]);
+                    //console.log(department+' '+location+' '+data[department][location]);
                     locationfinder(location,data[department][location],department);
                   });
                 });
@@ -462,7 +462,8 @@
         });
     }
 
-    var myVar1 = setInterval(plot_number, 3000);
+    var plot = setInterval(plot_number, 3000);
+    var refresh = setInterval(drawMap, 3000);
   });
 
 
