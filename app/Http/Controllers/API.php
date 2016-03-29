@@ -19,7 +19,7 @@ class API extends Controller
     	elseif(pow($a-10.758977,2)+pow($b-78.813602,2)-pow(0.00008,2) < 0)
     		return "a13";
     	elseif(pow($a-10.759006,2)+pow($b-78.813237,2)-pow(0.000457010,2) < 0)
-    		return "iotlab";
+    		return "barn";
     	else 
     		return "nowhere";
     }
@@ -40,7 +40,7 @@ class API extends Controller
             return "ece";
           case '107':
             return "eee";
-          case '110':
+          case '11':
             return "ice";
           case '111':
             return "mech";
@@ -76,6 +76,7 @@ class API extends Controller
     		$student->long = $request->long;
     		$student->location = $this->get_location($request->lat,$request->long);
     		$student->dept = $this->get_dept($request->rollno);
+            //return $student->dept;
             $student->updated = time();
             $student->save();
     	return 2;
