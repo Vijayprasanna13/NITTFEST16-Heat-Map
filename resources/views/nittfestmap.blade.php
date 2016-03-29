@@ -1,12 +1,12 @@
- 
+
  <!DOCTYPE HTML>
 <html>
   <head>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <style>
-      body 
+      body
       {
         margin: 0px;
         padding: 0px;
@@ -22,11 +22,11 @@
       var canvas = document.getElementById('myCanvas');
       var context = canvas.getContext('2d');
       var context1 = canvas.getContext('2d');
-      
+
       function drawMap()
       {
         var map = new Image();
-        map.onload = function() 
+        map.onload = function()
         {
           context.drawImage(map, 0, 0);
         };
@@ -48,70 +48,70 @@
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,122,610); 
+        context1.fillText(count,122,610);
         }
 
         if(dept=="ece")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,163,610); 
+        context1.fillText(count,163,610);
         }
 
         if(dept=="mech")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,125,564); 
+        context1.fillText(count,125,564);
         }
 
         if(dept=="eee")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,170,566); 
+        context1.fillText(count,170,566);
         }
 
         if(dept=="ice")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,134,514); 
+        context1.fillText(count,134,514);
         }
 
         if(dept=="chem")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,185,518); 
+        context1.fillText(count,185,518);
         }
 
         if(dept=="civil")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,148,458); 
+        context1.fillText(count,148,458);
         }
 
         if(dept=="prod")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,201,458); 
+        context1.fillText(count,201,458);
         }
 
         if(dept=="meta")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,235,535); 
+        context1.fillText(count,235,535);
         }
 
         if(dept=="archi")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,250,480); 
+        context1.fillText(count,250,480);
         }
       }
 
@@ -122,70 +122,70 @@
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,607,593); 
+        context1.fillText(count,607,593);
         }
 
         if(dept=="ece")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,566,600); 
+        context1.fillText(count,566,600);
         }
 
         if(dept=="mech")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,598,551); 
+        context1.fillText(count,598,551);
         }
 
         if(dept=="eee")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,553,551); 
+        context1.fillText(count,553,551);
         }
 
         if(dept=="ice")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,575,496); 
+        context1.fillText(count,575,496);
         }
 
         if(dept=="chem")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,528,496); 
+        context1.fillText(count,528,496);
         }
 
         if(dept=="civil")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,482,534); 
+        context1.fillText(count,482,534);
         }
 
         if(dept=="prod")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,546,450); 
+        context1.fillText(count,546,450);
         }
 
         if(dept=="meta")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,492,450); 
+        context1.fillText(count,492,450);
         }
 
         if(dept=="archi")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,452,487); 
+        context1.fillText(count,452,487);
         }
       }
 
@@ -196,70 +196,70 @@
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,780,303); 
+        context1.fillText(count,780,303);
         }
 
         if(dept=="ece")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,810,261); 
+        context1.fillText(count,810,261);
         }
 
         if(dept=="mech")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,750,259); 
+        context1.fillText(count,750,259);
         }
 
         if(dept=="eee")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,783,219); 
+        context1.fillText(count,783,219);
         }
 
         if(dept=="ice")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,846,158); 
+        context1.fillText(count,846,158);
         }
 
         if(dept=="chem")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,850,108); 
+        context1.fillText(count,850,108);
         }
 
         if(dept=="civil")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,790,122); 
+        context1.fillText(count,790,122);
         }
 
         if(dept=="prod")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,792,169); 
+        context1.fillText(count,792,169);
         }
 
         if(dept=="meta")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,715,213); 
+        context1.fillText(count,715,213);
         }
 
         if(dept=="archi")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,740,160); 
+        context1.fillText(count,740,160);
         }
       }
 
@@ -269,70 +269,70 @@
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,214,172); 
+        context1.fillText(count,214,172);
         }
 
         if(dept=="ece")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,273,172); 
+        context1.fillText(count,273,172);
         }
 
         if(dept=="mech")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,335,172); 
+        context1.fillText(count,335,172);
         }
 
         if(dept=="eee")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,406,172); 
+        context1.fillText(count,406,172);
         }
 
         if(dept=="ice")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,244,237); 
+        context1.fillText(count,244,237);
         }
 
         if(dept=="chem")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,317,237); 
+        context1.fillText(count,317,237);
         }
 
         if(dept=="civil")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,392,237); 
+        context1.fillText(count,392,237);
         }
 
         if(dept=="prod")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,270,304); 
+        context1.fillText(count,270,304);
         }
 
         if(dept=="meta")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,337,303); 
+        context1.fillText(count,337,303);
         }
 
         if(dept=="archi")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,400,302); 
+        context1.fillText(count,400,302);
         }
       }
 
@@ -342,70 +342,70 @@
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,913,568); 
+        context1.fillText(count,913,568);
         }
 
         if(dept=="ece")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,964,568); 
+        context1.fillText(count,964,568);
         }
 
         if(dept=="mech")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,1022,564); 
+        context1.fillText(count,1022,564);
         }
 
         if(dept=="eee")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,1077,568); 
+        context1.fillText(count,1077,568);
         }
 
         if(dept=="ice")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,1144,568); 
+        context1.fillText(count,1144,568);
         }
 
         if(dept=="chem")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,1208,568); 
+        context1.fillText(count,1208,568);
         }
 
         if(dept=="civil")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,1172,505); 
+        context1.fillText(count,1172,505);
         }
 
         if(dept=="prod")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,1097,508); 
+        context1.fillText(count,1097,508);
         }
 
         if(dept=="meta")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,1023,510); 
+        context1.fillText(count,1023,510);
         }
 
         if(dept=="archi")
         {
          context1.fillStyle = "#FFFFFF";
         context1.font = "16px Arial";
-        context1.fillText(count,945,512); 
+        context1.fillText(count,945,512);
         }
       }
 
@@ -422,12 +422,12 @@
         else if(location=="lhc")
           lhc(count,dept);
       }
-       
-   //  var myVar3 = setTimeout(plot_number, 2000);
-      
 
-     
-    
+   //  var myVar3 = setTimeout(plot_number, 2000);
+
+
+
+
 
     </script>
 <!--AJAX-->
@@ -442,7 +442,7 @@
     function plot_number(){
     $.ajax({
           dataType: "json",
-            url: "{{action('API@map')}}",
+            url: "{{env('SERVER_ROOT', 'http://localhost:8000').'/map'}}",
             type:"POST",
             data: {},
             success:function(data){
@@ -456,7 +456,7 @@
                   });
                 });
 
-            },error:function(){ 
+            },error:function(){
                 alert("error!");
             }
         });
@@ -471,4 +471,3 @@
   </body>
   </html>
 
-  
