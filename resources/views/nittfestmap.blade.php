@@ -30,7 +30,7 @@
         {
           context.drawImage(map, 0, 0);
         };
-        map.src = 'css/nittfestmap1.jpg';
+        map.src = '{{asset("css/nittfestmap1.jpg")}}';
       }
       drawMap();
 
