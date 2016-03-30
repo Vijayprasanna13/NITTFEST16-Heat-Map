@@ -16,6 +16,9 @@ Route::get('/', function () {
 });
 
 Route::post('/add','API@add');
-Route::get('/form','Pages@form');
 Route::post('/map','API@map');
 Route::get('/map','Pages@map');
+Route::get('/form','Pages@form');
+Route::get('/viewcoords','Pages@showcoords');
+Route::get('/viewstudents','Pages@showstudents');
+Route::post('/form','API@form');

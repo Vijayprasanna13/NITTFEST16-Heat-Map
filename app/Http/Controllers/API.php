@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Location;
 use App\Student;
+use App\Coord;
 use App\Http\Controllers\Controller;
 
 class API extends Controller
@@ -12,16 +13,10 @@ class API extends Controller
     public function get_location($a,$b){
     	if(pow($a-10.75928,2)+pow($b-78.81465,2)-pow(0.00031,2) < 0)
     		return "eee_audi";
-    	elseif(pow($a-10.761028,2)+pow($b-78.813878,2)-pow(0.0005,2) < 0)
-    		return "lhc";
-		elseif(pow($a-10.759464,2)+pow($b-78.813741,2)-pow(0.000429963,2) < 0)
-    		return "barn";
-    	elseif(pow($a-10.758977,2)+pow($b-78.813602,2)-pow(0.00008,2) < 0)
-    		return "a13";
-        elseif(pow($a-10.758965,2)+pow($b-78.812896,2)-pow(0.00011,2) < 0)
-            return "a2";
-    	elseif(pow($a-10.759006,2)+pow($b-78.813237,2)-pow(0.000457010,2) < 0)
-    		return "barn";
+    	elseif(pow($a-10.759464,2)+pow($b-78.813741,2)-pow(0.000429963,2) < 0)
+    		return "informals";
+    	elseif(pow($a-10.759006,2)+pow($b-78.813237,2)-pow(0.000457010,2) < 0) //iotlab - test coords
+    		return "informals";
     	else 
     		return "nowhere";
     }
@@ -89,14 +84,14 @@ class API extends Controller
     public function map(){
         $data = [];
         $students = Student::all();
-        $locations = ['lhc','a2','a13','barn','eeeaudi'];
+        $locations = ['informals','eeeaudi'];
         $departments = ['archi','cse','ece','mech','eee','ice','chem','civil','prod','meta'];
         //return $locations;
         foreach ($departments as $department) {
             foreach ($locations as $location) {
                 $count = 0;
                 foreach ($students as $student) {
-                        if(time()-$student->updated <= 600
+                        if(time()-$student->updated <= 1200
                             && $student->location == $location 
                             && $student->dept== $department)
                             $count++;
@@ -107,5 +102,27 @@ class API extends Controller
             }
         }
        return json_encode($data);
+    }
+
+    public function form(Request $request){
+       //return $request;
+        $coord = Coord::where('venue',$request->venue)->get();
+        if(($coord->isEmpty()) ) {
+        $coord = new Coord;
+        $coord->lat = $request->lat;
+        $coord->long = $request->long;
+        $coord->radius = $request->radius;
+        $coord->venue = $request->venue;
+        $coord->save();
+        }
+        else
+        {
+            Coord::where('venue',$request->venue)
+                 ->update([
+                    'lat' => $request->lat,
+                    'long' => $request->long,
+                    'radius' => $request->radius
+                    ]);
+        }
     }
 }
