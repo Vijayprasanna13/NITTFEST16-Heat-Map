@@ -12,15 +12,23 @@ class API extends Controller
 {
     //Function to get the location based on coords given parameters lat,long of user
     public function get_location($a,$b){
-    	if(pow($a-10.75928,2)+pow($b-78.81465,2)-pow(0.00031,2) < 0)
-    		return "eee_audi";
-    	elseif(pow($a-10.759464,2)+pow($b-78.813741,2)-pow(0.000429963,2) < 0)
-    		return "informals";
-    	elseif(pow($a-10.759006,2)+pow($b-78.813237,2)-pow(0.000457010,2) < 0) //iotlab - test coords
-    		return "informals";
-    	else 
-    		return "nowhere";
-    }
+    $coord = Coord::where('venue','eeeaudi')->first();
+    $eeeaudi_lat = $coord->lat;
+    $eeeaudi_long = $coord->long;
+    $eeeaudi_radius = $coord->radius;
+    $coord = Coord::where('venue','informals')->first();
+    $informals_lat = $coord->lat;
+    $informals_long = $coord->long;
+    $informals_radius = $coord->radius;
+    if(pow($a-$eeeaudi_lat,2)+pow($b-$eeeaudi_long,2)-pow($eeeaudi_radius,2) < 0)
+        return "eee_audi";
+    elseif(pow($a-$informals_lat,2)+pow($b-$informals_long,2)-pow($informals_radius,2) < 0)
+        return "informals";
+    elseif(pow($a-$informals_lat,2)+pow($b-$informals_long,2)-pow($informals_radius,2) < 0) //iotlab S
+        return "informals";
+    else 
+        return "nowhere";
+            }
 
     //Function to get the dept given rollno
     public function get_dept($rollno){
@@ -57,6 +65,7 @@ class API extends Controller
     	$student = Student::where('rollno',$request->rollno)->get();
     	if( !($student->isEmpty()) ){	
     	$location = $this->get_location($request->lat,$request->long);
+        return $location;
         $dept = $this->get_dept($request->rollno);
     	$update = Student::where('rollno',$request->rollno)
     					  ->update([
@@ -75,6 +84,7 @@ class API extends Controller
     		$student->lat = $request->lat;
     		$student->long = $request->long;
     		$student->location = $this->get_location($request->lat,$request->long);
+            return $student->location;
     		$student->dept = $this->get_dept($request->rollno);
             //return $student->dept;
             $student->updated = time();
