@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 
 class API extends Controller
 {
+    //Function to get the location based on coords given parameters lat,long of user
     public function get_location($a,$b){
     	if(pow($a-10.75928,2)+pow($b-78.81465,2)-pow(0.00031,2) < 0)
     		return "eee_audi";
@@ -21,6 +22,7 @@ class API extends Controller
     		return "nowhere";
     }
 
+    //Function to get the dept given rollno
     public function get_dept($rollno){
         $roll = strrev(strrev($rollno)%1000);
         //return $roll;
@@ -50,6 +52,7 @@ class API extends Controller
 }
     }
 
+    //Function to add a new entry or update a existing entry in the Student table
     public function add(Request $request){
     	$student = Student::where('rollno',$request->rollno)->get();
     	if( !($student->isEmpty()) ){	
@@ -81,6 +84,7 @@ class API extends Controller
     	return 0;
     } 
 
+    //Function to render map
     public function map(){
         $data = [];
         $students = Student::all();
@@ -104,6 +108,7 @@ class API extends Controller
        return json_encode($data);
     }
 
+    //Function to add a new coords-form or update an existing one 
     public function form(Request $request){
        //return $request;
         $coord = Coord::where('venue',$request->venue)->get();
