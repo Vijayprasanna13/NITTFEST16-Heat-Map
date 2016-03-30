@@ -21,7 +21,7 @@ class API extends Controller
     $informals_long = $coord->long;
     $informals_radius = $coord->radius;
     if(pow($a-$eeeaudi_lat,2)+pow($b-$eeeaudi_long,2)-pow($eeeaudi_radius,2) < 0)
-        return "eee_audi";
+        return "eeeaudi";
     elseif(pow($a-$informals_lat,2)+pow($b-$informals_long,2)-pow($informals_radius,2) < 0)
         return "informals";
     elseif(pow($a-$informals_lat,2)+pow($b-$informals_long,2)-pow($informals_radius,2) < 0) //iotlab S
@@ -65,7 +65,7 @@ class API extends Controller
     	$student = Student::where('rollno',$request->rollno)->get();
     	if( !($student->isEmpty()) ){	
     	$location = $this->get_location($request->lat,$request->long);
-        return $location;
+        //return $location;
         $dept = $this->get_dept($request->rollno);
     	$update = Student::where('rollno',$request->rollno)
     					  ->update([
@@ -84,9 +84,9 @@ class API extends Controller
     		$student->lat = $request->lat;
     		$student->long = $request->long;
     		$student->location = $this->get_location($request->lat,$request->long);
-            return $student->location;
+//            return $student->location;
     		$student->dept = $this->get_dept($request->rollno);
-            //return $student->dept;
+ //           return $student->dept;
             $student->updated = time();
             $student->save();
     	return 2;
@@ -109,8 +109,8 @@ class API extends Controller
                             && $student->location == $location 
                             && $student->dept== $department)
                             $count++;
-                            //print 
-                            //print time()-$student->updated.'<br/>';
+                            
+//                            print time()-$student->updated.$department.$location.$count.'<br/>';
                     }    
                     $data[$department][$location] = $count;
             }
