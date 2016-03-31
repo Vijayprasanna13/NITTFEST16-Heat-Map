@@ -22,10 +22,8 @@ Route::get('/viewcoords','Pages@showcoords');
 Route::get('/viewstudents','Pages@showstudents');
 
 
-Route::group(['middleware' => 'auth'], function () {
 
 Route::get('/form','Pages@form');
 Route::post('/form','API@form');
 Route::get('/clearstudentstable','Pages@deletestudents');
 
-});
