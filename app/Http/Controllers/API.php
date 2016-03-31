@@ -100,18 +100,17 @@ return "nowhere";
             foreach ($locations as $location) {
                 $count = 0;
                 foreach ($students as $student) {
-                        if(
-                             $student->location == $location 
+                        if($student->location == $location 
                             && $student->dept== $department)
                             {$count++;
                             
-//  print time()-$student->updated." ".$student->rollno." ".$department." ".$location." ".$count.'<br/>';}
                     }    
                     $data[$department][$location] = $count;
             }
         }
-       return json_encode($data);
     }
+       return json_encode($data);
+    
 }
 
     //Function to add a new coords-form or update an existing one 
