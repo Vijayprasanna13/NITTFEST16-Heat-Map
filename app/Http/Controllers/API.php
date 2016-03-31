@@ -112,6 +112,7 @@ return "nowhere";
         }
        return json_encode($data);
     }
+}
 
     //Function to add a new coords-form or update an existing one 
     public function form(Request $request){
