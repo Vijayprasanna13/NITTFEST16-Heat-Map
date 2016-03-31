@@ -115,8 +115,8 @@ return "nowhere";
             foreach ($locations as $location) {
                 $count = 0;
                 foreach ($students as $student) {
-                        if(time()-$student->updated > 0
-                            && $student->location == $location 
+                        if(
+                             $student->location == $location 
                             && $student->dept== $department)
                             $count++;
                             
