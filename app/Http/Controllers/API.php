@@ -118,9 +118,9 @@ return "nowhere";
                         if(
                              $student->location == $location 
                             && $student->dept== $department)
-                            $count++;
+                            {$count++;
                             
-                           print time()-$student->updated.$department.$location.$count.'<br/>';
+                           print time()-$student->updated." ".$student->rollno." ".$department." ".$location." ".$count.'<br/>';}
                     }    
                     $data[$department][$location] = $count;
             }
