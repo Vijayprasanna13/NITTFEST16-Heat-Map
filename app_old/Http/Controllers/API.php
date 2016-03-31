@@ -12,32 +12,22 @@ class API extends Controller
 {
     //Function to get the location based on coords given parameters lat,long of user
     public function get_location($a,$b){
-    //$coord = Coord::where('venue','eeeaudi')->first();
-   // $eeeaudi_lat = $coord->lat;
-   // $eeeaudi_long = $coord->long;
-    //$eeeaudi_radius = $coord->radius;
-    //$coord = Coord::where('venue','informals')->first();
-    //$informals_lat = $coord->lat;
-   // $informals_long = $coord->long;
-    // $informals_radius = $coord->radius;
-    // if(pow($a-$eeeaudi_lat,2)+pow($b-$eeeaudi_long,2)-pow($eeeaudi_radius,2) < 0)
-    //     return "eeeaudi";
-    // elseif(pow($a-$informals_lat,2)+pow($b-$informals_long,2)-pow($informals_radius,2) < 0)
-    //     return "informals";
-    // elseif(pow($a-$informals_lat,2)+pow($b-$informals_long,2)-pow($informals_radius,2) < 0) //iotlab S
-    //     return "informals";
-    // else 
-    //     return "nowhere";
-$lati=($a-10.758)*1000-0.9;
-$longi=2.2-($b-78.813)*1000;
-if($lati<0.5 && $lati>=0 && $longi <1 && $longi>0)
-return "eeeaudi";
-else if($lati>0.3 && $lati<0.8 && $longi >1 && $longi<2)
-return "informals";
-else
-return "nowhere";           
-
-
+    $coord = Coord::where('venue','eeeaudi')->first();
+    $eeeaudi_lat = $coord->lat;
+    $eeeaudi_long = $coord->long;
+    $eeeaudi_radius = $coord->radius;
+    $coord = Coord::where('venue','informals')->first();
+    $informals_lat = $coord->lat;
+    $informals_long = $coord->long;
+    $informals_radius = $coord->radius;
+    if(pow($a-$eeeaudi_lat,2)+pow($b-$eeeaudi_long,2)-pow($eeeaudi_radius,2) < 0)
+        return "eeeaudi";
+    elseif(pow($a-$informals_lat,2)+pow($b-$informals_long,2)-pow($informals_radius,2) < 0)
+        return "informals";
+    elseif(pow($a-$informals_lat,2)+pow($b-$informals_long,2)-pow($informals_radius,2) < 0) //iotlab S
+        return "informals";
+    else 
+        return "nowhere";
             }
 
     //Function to get the dept given rollno
