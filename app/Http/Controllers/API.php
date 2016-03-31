@@ -105,7 +105,7 @@ return "nowhere";
                             && $student->dept== $department)
                             {$count++;
                             
-                         //  print time()-$student->updated." ".$student->rollno." ".$department." ".$location." ".$count.'<br/>';}
+//  print time()-$student->updated." ".$student->rollno." ".$department." ".$location." ".$count.'<br/>';}
                     }    
                     $data[$department][$location] = $count;
             }
