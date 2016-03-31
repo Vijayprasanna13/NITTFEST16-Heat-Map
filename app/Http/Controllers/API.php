@@ -100,7 +100,7 @@ return "nowhere";
             foreach ($locations as $location) {
                 $count = 0;
                 foreach ($students as $student) {
-                        if($student->location == $location 
+                        if(time()-$student->updated <=3600 && $student->location == $location 
                             && $student->dept== $department)
                             {$count++;
                             
