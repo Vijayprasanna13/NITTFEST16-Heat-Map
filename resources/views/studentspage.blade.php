@@ -16,6 +16,8 @@
         <th>lat</th>
         <th>long</th>
         <th>timediff</th>
+        <th>location</th>
+        <th>department</th>
       </tr>
     </thead>
     <tbody>
