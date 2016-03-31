@@ -25,6 +25,9 @@
         <td>{{$student->lat}}</td>
         <td>{{$student->long}}</td>
         <td>{{floor((time()-$student->updated)/60)}}</td>
+        <td>{{$student->location}}</td>
+        <td>{{$student->dept}}</td>
+
       </tr>
 @endforeach
     </tbody>
