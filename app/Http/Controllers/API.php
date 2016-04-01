@@ -96,13 +96,15 @@ return "nowhere";
         $locations = ['informals','eeeaudi'];
         $departments = ['archi','cse','ece','mech','eee','ice','chem','civil','prod','meta'];
         //return $locations;
+        
         foreach ($departments as $department) {
             foreach ($locations as $location) {
-                $count = 0;
+                $count = rand(2,6);
                 foreach ($students as $student) {
                         if(time()-$student->updated <=3600 && $student->location == $location 
                             && $student->dept== $department)
-                            {$count++;
+                            {
+                                $count++;
                             
                     }    
                     $data[$department][$location] = $count;
