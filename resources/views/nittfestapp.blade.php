@@ -241,8 +241,8 @@
     }
 
     
-      var refresh = setInterval(drawMap, 6000);
-      var plot = setInterval(plot_number, 6000);
+      var refresh = setInterval(drawMap, 3000);
+      var plot = setInterval(plot_number, 3000);
   });
 
     </script>
