@@ -13,14 +13,13 @@ class API extends Controller
     //Function to get the location based on coords given parameters lat,long of user
     public function get_location($a,$b){
     
-$lati=($a-10.758)*1000-0.9;
-$longi=2.2-($b-78.813)*1000;
-if($lati<0.5 && $lati>=0 && $longi <1 && $longi>0)
-return "eeeaudi";
-else if($lati>0.3 && $lati<0.8 && $longi >1 && $longi<2)
-return "informals";
+/*$lati=($a-10.758)*1000-0.9;
+$longi=2.2-($b-78.813)*1000;*/
+$venues = ['eeeaudi','informals'];
+if( ($a>10.758 && $a<10.762) && ($b>78.813 && $b<78.817) )
+    return $venues[rand(0,1)];
 else
-return "nowhere";           
+    return "nowhere";           
 
 
             }
@@ -96,10 +95,10 @@ return "nowhere";
         $locations = ['informals','eeeaudi'];
         $departments = ['archi','cse','ece','mech','eee','ice','chem','civil','prod','meta'];
         //return $locations;
-        
+        $count = 0;
         foreach ($departments as $department) {
             foreach ($locations as $location) {
-                
+                $count = 0;
                 foreach ($students as $student) {
                         if(time()-$student->updated <=3600 && $student->location == $location 
                             && $student->dept== $department)
@@ -107,7 +106,7 @@ return "nowhere";
                                 $count++;
                             
                     }
-                    $count = rand(2,10);    
+                    //$count = rand(2,10);    
                     $data[$department][$location] = $count;
             }
         }
