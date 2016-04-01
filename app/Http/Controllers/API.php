@@ -21,8 +21,7 @@ if( ($a>10.758 && $a<10.762) && ($b>78.813 && $b<78.817) )
 else
     return "nowhere";           
 
-
-            }
+    }
 
     //Function to get the dept given rollno
     public function get_dept($rollno){
