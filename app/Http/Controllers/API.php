@@ -107,7 +107,7 @@ return "nowhere";
                                 $count++;
                             
                     }
-                    $count = rand(2,6);    
+                    $count = rand(2,10);    
                     $data[$department][$location] = $count;
             }
         }
