@@ -23,16 +23,7 @@
       var context = canvas.getContext('2d');
       var context1 = canvas.getContext('2d');
       
-      function drawMap()
-      {
-        var map = new Image();
-        map.onload = function() 
-        {
-          context.drawImage(map, 0, 0);
-        };
-        map.src = 'nittfestmap2.jpg';
-      }
-      drawMap();
+      //drawMap();
 
 
        function okay()
@@ -208,12 +199,14 @@
     </script>
     <script>
       $(document).ready(function(){
-
+        drawMap();
+    
     $.ajaxSetup({
         headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+    
     function plot_number(){
     $.ajax({
           dataType: "json",
@@ -237,8 +230,19 @@
         });
     }
 
-    var plot = setInterval(plot_number, 3000);
-    var refresh = setInterval(drawMap, 3000);
+      function drawMap()
+      { flag = 1;
+        var map = new Image();
+        map.onload = function() 
+        {
+          context.drawImage(map, 0, 0);
+        };
+        map.src = 'nittfestmap2.jpg';
+        plot_number();
+      }
+    if(flag == 1)  
+      var refresh = setInterval(drawMap, 60000);
+    //var plot = setInterval(plot_number, 3000);
   });
 
     </script>
